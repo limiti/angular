@@ -1,0 +1,45 @@
+<div class="content-box">
+    <h1>Controller {{pageTitle}}</h1>
+
+    <div class="blog-posts" ng-if="posts">
+        <div class="blog-post" ng-click="activeBoxClass='active-blog-box'" ng-class="activeBoxClass" ng-repeat="post in posts | limitTo:postsInfo.postsLimit">
+            <h4 class="blog-post-title">{{post.name}}</h4>
+            <div class="pull-right post-blog-control">
+                <span> POST-ID:{{post.id}}</span>
+            </div>
+            <p class="blog-post-description">{{post.description}}</p>
+            <p ng-if="post.like.countLike"><i class="glyphicon glyphicon-heart"></i> {{post.like.countLike}}</p>
+            <!--USER INFO  -->
+            <div class="post-like-users" ng-if="post.like.userLike"  ng-click="showDialogUserPostLike(post)">
+                <div class="user-post-like" ng-repeat="userLike in post.like.userLike">
+                   <div class="blog-post-like-user-avatar">
+                       <p>{{userLike.userName}}</p>
+                       <img src=" {{userLike.userAvatar}}" alt=""/>
+                   </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!--End USER INFO  -->
+            <div class="clearfix"></div>
+            <div class="control-blog-post-buttons">
+                <div class="pull-left" ng-click="deletePost(post)"><i class="glyphicon glyphicon-trash"></i>Delete</div>
+                <div class="pull-right" ng-click="editPost(post)"><i class="glyphicon glyphicon-text-height"></i>Edit</div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <form class="form-group">
+            <input class="form-control" type="text" ng-model="collectionPostData.name" />
+            <textarea class="form-control"  rows="5" ng-model="collectionPostData.description"></textarea>
+            <button class="btn btn-info" ng-click="addNewPost(collectionPostData)">Add New Post</button>
+        </form>
+        <div class="load-more-posts" ng-if="postsInfo.postsCount >= postsInfo.postsLimit" ng-click="loadMorePosts()"><i class="glyphicon glyphicon-refresh"></i> {{postsInfo.postsCount+"/"+ postsInfo.postsLimit}} Load More</div>
+
+    </div>
+
+    <div class="blog-posts" ng-if="!posts">
+        <div class="blog-post">
+            <h4 class="blog-post-title">Posts not found !</h4>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,13 @@
+<h1>Edit : {{post.name}}</h1>
+<div class="user-like-modal-data">
+    <form>
+
+        <input class="form-control" type="text"  value="{{post.name}}" ng-model="collectionNewPostData.name"/>
+
+        <textarea class="form-control" name="description" rows="5" ng-model="collectionNewPostData.description">{{post.description}}</textarea>
+
+        <button class="btn btn-info" ng-click="saveNewData(post,collectionNewPostData)">Update</button>
+
+    </form>
+
+</div>

@@ -1,0 +1,58 @@
+body .content-box img {
+  max-width: 100%;
+}
+body .content-box .blog-posts .blog-post {
+  background: #F7EDED;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+body .content-box .blog-posts .blog-post-like-user-avatar img {
+  max-width: 65px;
+  max-height: 65px;
+}
+body .content-box .blog-posts .user-post-like {
+  float: left;
+  padding: 5px;
+  border: 1px solid #B8B8B8;
+  margin: 0 5px 0px 5px;
+}
+body .content-box .blog-posts .blog-post-like-user-avatar p {
+  border-bottom: 1px solid #B8B8B8;
+}
+body .content-box .blog-posts textarea {
+  margin: 15px 0;
+}
+body .content-box .blog-posts .load-more-posts {
+  font-size: 16px;
+  padding: 15px 0;
+  text-align: center;
+  background: #F7EDED;
+}
+body .content-box .blog-posts .blog-post.active-blog-box {
+  background: #ffb9b9;
+}
+body .user-post-like-modal {
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  padding: 15px 0 15px 0;
+}
+body .user-post-like-modal img {
+  max-width: 100px;
+  max-height: 100px;
+  margin: 0 auto;
+  display: block;
+}
+body .user-post-like-modal span {
+  display: block;
+  font-size: 18px;
+  text-align: center;
+}
+body .control-blog-post-buttons {
+  display: none;
+}
+body .active-blog-box .control-blog-post-buttons {
+  display: block;
+}
+body .control-blog-post-buttons {
+  margin: 15px 15px 15px 15px;
+}
